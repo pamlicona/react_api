@@ -1,0 +1,38 @@
+* En el index.html dentro de public esta el punto de montaje de nuestra app
+    <div id="main"></div>
+* 'react-dom' insertar código generado dentro del index.html
+* 'react-dom' no viene integrado en React ya que react puede ser utilizado no solo en web.
+* Webpack facilita la utilización de react
+* 'export default StorePicker' default ya que pueden existir varias clases en un solo componente
+* React Developer Tools es una consola para poder ver los componentes de react ya que en una consola
+    normal no se ven.
+* Investigar jsx. Sin él tendríamos que crear los elementos así:
+    React.createElement('p', { className:'hey'}, 'Holaaaaaaaaaa') en lugar de:
+    <p class="hey">Holaaaaaaaaaa</p>
+
+* Solo se puede regresar un elemento:
+    return (
+      <form className='store-selector'>
+        <p>Por favor ingresa un nombre</p>
+      </form>
+    )
+    Lo siguiente marca un error, a menos que utilices React.Fragment o lo metas en un div:
+    return (
+      <p>Feo</p>
+      <form className='store-selector'>
+        <p>Por favor ingresa un nombre</p>
+      </form>
+    )
+* Las llaves {} dentro del jsx se interpretan automaticamente como javascript
+* this = objeto (componente) al que nos referimos o en el que estamos
+* function Header(props) pasarle los argumentos ya que no tienen bindeado un this
+* con el Router cada componente tiene las propiedades de ruta
+* 'defaultValue' valor en el input que no es controlado por React. 'value' si es controlado por React
+* SyntheticEvents
+* arrow function trae bindeado this  por defecto
+* myInput = React.createRef() Crea una referencia para indicar que será obtenido del dom
+* props.history.push = Cambio de ruta siempre y el componente tenga Router
+* El estado es un objeto que vive dentro de un componente
+* "setState" Actualiza solo la parte del state que se necesita
+* onClick={() => this.props.addToOrder(this.props.index)} Evita que se mande llamar la función addToOrder
+    cada vez que se renderiza el componente, por ello se agrega una arrow function vacía
